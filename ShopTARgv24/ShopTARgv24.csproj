@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\multipleFileUpload\0255380c-1d57-415e-91d9-1bf2c1fc3ff2_Soyuz_TMA-7_spacecraft2edit1.jpg" />
+    <Content Remove="wwwroot\multipleFileUpload\ccbdf619-bd28-48f7-96ee-123a6840c79c_Soyuz_TMA-7_spacecraft2edit1.jpg" />
+    <Content Remove="wwwroot\multipleFileUpload\dd6306fb-4624-425d-b68f-bba2e2e6fd0c_Soyuz_TMA-7_spacecraft2edit1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopTARgv24.ApplicationServices\ShopTARgv24.ApplicationServices.csproj" />
+    <ProjectReference Include="..\ShopTARgv24.Data\ShopTARgv24.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="multipleFileUpload\" />
+    <Folder Include="wwwroot\multipleFileUpload\" />
+  </ItemGroup>
+
+</Project>
