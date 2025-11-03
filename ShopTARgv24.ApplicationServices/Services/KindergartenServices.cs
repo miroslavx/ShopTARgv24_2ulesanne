@@ -64,7 +64,7 @@ namespace ShopTARgv24.ApplicationServices.Services
             domain.CreatedAt = dto.CreatedAt;
             domain.ModifiedAt = DateTime.Now;
 
-            // Важно! Загружаем новые файлы при обновлении
+            
             if (dto.Files != null && dto.Files.Count > 0)
             {
                 _fileServices.UploadFilesToDatabaseForKindergarten(dto, domain);

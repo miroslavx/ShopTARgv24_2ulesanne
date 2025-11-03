@@ -37,10 +37,9 @@ namespace ShopTARgv24.Controllers
                     Area = x.Area,
                     BuildingType = x.BuildingType,
                     RoomNumber = x.RoomNumber,
-                    Location = x.Location  // Добавили Location
+                    Location = x.Location  
                 })
-                .ToList(); // Важно! Выполняем запрос
-
+                .ToList(); 
             return View(result);
         }
 
@@ -201,7 +200,6 @@ namespace ShopTARgv24.Controllers
             return View(vm);
         }
 
-        // Новые методы для удаления изображений
         [HttpPost]
         public async Task<IActionResult> RemoveImage(Guid imageId, Guid realEstateId)
         {

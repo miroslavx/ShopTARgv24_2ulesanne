@@ -1,6 +1,6 @@
 ﻿@model ShopTARgv24.Core.Dto.AccuLocationWeatherResultDto
 
-<h1>Weather Information</h1>
+<h1>AccuWeather Information</h1>
 
 @if (!string.IsNullOrEmpty(ViewBag.Error))
 {
@@ -12,8 +12,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h3>City: @Model.CityName</h3>
-            <p>Weather data will be displayed here when API is properly configured.</p>
+            <div class="card">
+                <div class="card-header">
+                    <h3>@Model.CityName</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Location Information</h4>
+                    <p><strong>City:</strong> @Model.CityName</p>
+                    <p>AccuWeather location data retrieved successfully!</p>
+                    <p class="text-muted">Note: This demonstrates successful connection to AccuWeather API for location search.</p>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Data provided by AccuWeather</small>
+                </div>
+            </div>
         </div>
     </div>
 

@@ -1,0 +1,67 @@
+﻿@model ShopTARgv24.Models.Weather.OpenWeatherViewModel
+
+<h1>OpenWeather Information</h1>
+
+@if (!string.IsNullOrEmpty(ViewBag.Error))
+{
+    <div class="alert alert-danger">
+        @ViewBag.Error
+    </div>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3>@Model.CityName, @Model.Country</h3>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Temperature</h4>
+                            <p><strong>Current:</strong> @(Model.Temperature?.ToString("F1"))°C</p>
+                            <p><strong>Feels like:</strong> @(Model.FeelsLike?.ToString("F1"))°C</p>
+                            <p><strong>Min:</strong> @(Model.TempMin?.ToString("F1"))°C</p>
+                            <p><strong>Max:</strong> @(Model.TempMax?.ToString("F1"))°C</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h4>Weather Conditions</h4>
+                            <p><strong>Condition:</strong> @Model.WeatherMain</p>
+                            <p><strong>Description:</strong> @Model.Description</p>
+                            @if (!string.IsNullOrEmpty(Model.Icon))
+                            {
+                                <img src="https://openweathermap.org/img/w/@(Model.Icon).png" alt="@Model.Description" />
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-4">
+                            <h5>Humidity & Pressure</h5>
+                            <p><strong>Humidity:</strong> @Model.Humidity%</p>
+                            <p><strong>Pressure:</strong> @Model.Pressure hPa</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Wind</h5>
+                            <p><strong>Speed:</strong> @(Model.WindSpeed?.ToString("F1")) m/s</p>
+                            <p><strong>Direction:</strong> @Model.WindDeg°</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h5>Other</h5>
+                            <p><strong>Cloudiness:</strong> @Model.Cloudiness%</p>
+                            <p><strong>Coordinates:</strong> @(Model.Latitude?.ToString("F2")), @(Model.Longitude?.ToString("F2"))</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <small class="text-muted">Data provided by OpenWeatherMap</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a asp-controller="Weather" asp-action="Index" class="btn btn-primary">Back to Search</a>
+    </div>
+</div>

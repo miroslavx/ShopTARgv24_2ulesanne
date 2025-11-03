@@ -124,7 +124,7 @@ namespace ShopTARgv24.Controllers
                 Description = vm.Description,
                 CreatedAt = vm.CreatedAt,
                 ModifiedAt = vm.ModifiedAt,
-                Files = vm.Files  // Важно! Передаем файлы для загрузки
+                Files = vm.Files 
             };
 
             var result = await _kindergartenServices.Update(dto);
@@ -198,7 +198,7 @@ namespace ShopTARgv24.Controllers
             return View(vm);
         }
 
-        // Новые методы для удаления изображений
+       
         [HttpPost]
         public async Task<IActionResult> RemoveImage(Guid imageId, Guid kindergartenId)
         {
